@@ -31,3 +31,33 @@ function clearCoordinates() {
 screen.onclick = draw;
 screen.onmousemove = coordinates;
 screen.onmouseout = clearCoordinates;
+
+function TapEnter(){
+    if(document.getElementById('prompt-input').value != ''){
+        let newTagLi = document.createElement('li');
+        let newTagP = '<p>'+document.getElementById('prompt-input').value+'</p>';
+        newTagLi.innerHTML = newTagP;
+        let promptLi = document.getElementById('prompt-li');
+        document.getElementById('prompt').insertBefore(newTagLi, promptLi);
+        document.getElementById('prompt-input').value = '';
+        document.getElementById('prompt-input').focus();
+        let x = 0;
+        let y = document.getElementById('prompt').scrollHeight;
+        document.getElementById('prompt').scrollTo(x,y);
+    }
+}
+
+document.addEventListener('keydown', function onEvent(event){
+    if (event.key === 'Enter'){
+        event.preventDefault();
+        TapEnter();
+        return;
+    }
+});
+
+document.getElementById('prompt-input').focus();
+
+function autoHeight(element) {
+    element.style.height = '1px';
+    element.style.height = element.scrollHeight + 'px';
+}

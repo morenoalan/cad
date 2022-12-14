@@ -10,7 +10,7 @@
     <meta name='author' content='github.com/morenoalan' />
     <link rel='preconnect' href='https://fonts.googleapis.com' />
     <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin='crossorigin' />
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700' />
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@300' />
     <link rel='stylesheet' href='style.css' type='text/css' />
 </head>
 <body>
@@ -30,7 +30,11 @@
                 <p id='coordinates'>x, y</p>
             </li>
         </ul>
-        <textarea id='prompt' placeholder='Type a command&#10;[Type HELP to know the commands]'></textarea>
+        <ul id='prompt'>
+            <li id='prompt-li'>
+                <textarea id='prompt-input' rows='1' placeholder='Type a command [Type HELP to know the commands]' oninput="autoHeight(this)"></textarea>
+            </li>
+        </ul>
     </main>
     <footer>
         <p><a id='author' href='https://www.github.com/morenoalan' target='_blank'>Alan Moreno</a> <span class='invert-horizontal'>&#169;</span> <span id='copyleft-year'>2022</span> | <a href='https://www.github.com/morenoalan/cad' target='_blank'>Repository</a></p>

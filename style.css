@@ -36,7 +36,7 @@ body {
     width: 100%;
     background-color: var(--color-body);
     color: var(--color-black);
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Azeret Mono', monospace;
     font-size: 12px;
 }
 ul {
@@ -68,23 +68,46 @@ canvas:hover{
     align-items: center;
     text-align: end;
     height: 20px;
-    width: 600px;
+    width: var(--max-width);
     background-color: #151515;
     color: white;
 }
 #infos > li:last-child {
     padding-right: 5px;
 }
-main > textarea {
+#prompt {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
     height: 61px;
-    width: calc( var(--max-width) - 5px);
-    padding-left: 5px;
+    width: var(--max-width);
     background-color: #232323;
     color: var(--color-white);
     border: none;
     overflow-x: hidden;
-    resize: none;
 }
+#prompt > * {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: calc(var(--max-width) - 10px - 15px);
+    padding-left: 5px;
+    padding-right: 5px;
+}
+#prompt textarea {
+    background-color: transparent;
+    color: var(--color-white);
+    border: none;
+    height: 30px;
+    width: 100%;
+    resize: none;
+    padding-bottom: 3px;
+    font-family: 'Azeret Mono', monospace;
+    font-size: 12px;
+}
+
 footer {
     display: flex;
     flex-direction: column;
@@ -98,9 +121,9 @@ footer {
     text-align: center;
 }
 footer > p {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Azeret Mono', monospace;
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 300;
     color: var(--color-white);
     width: calc(100% - 20px);
 }
