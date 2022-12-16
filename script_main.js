@@ -1,6 +1,7 @@
 var screen = document.querySelector('canvas');
 var pointer = screen.getContext('2d');
 
+var status;
 var pointerDim = 10;
 
 function draw(){
